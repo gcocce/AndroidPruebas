@@ -80,7 +80,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             }
         });*/
 
+        // Para borrar el contenido anterior de la View
         holder.calendarItems.removeAllViews();
+
         LayoutInflater li = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         Iterator<Actividad> iterator=semana.getIterator();

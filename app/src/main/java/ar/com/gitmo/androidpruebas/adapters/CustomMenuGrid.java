@@ -52,6 +52,8 @@ public class CustomMenuGrid extends BaseAdapter {
             // Color del item habilitado
             if (position == 0){
                 grid.setBackgroundColor(mContext.getResources().getColor(R.color.itemBackgroundEnabled));
+            }else{
+                grid.setBackgroundColor(mContext.getResources().getColor(R.color.itemBackgroundDisabled));
             }
 
             TextView textView = (TextView) grid.findViewById(R.id.grid_text);

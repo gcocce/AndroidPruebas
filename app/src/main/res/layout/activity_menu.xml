@@ -4,7 +4,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-tools:context="ar.uba.fi.fiubapp.MenuActivity" >
+tools:context="ar.com.gitmo.androidpruebas.MenuActivity" >
 
     <GridView
         android:id="@+id/grid"
