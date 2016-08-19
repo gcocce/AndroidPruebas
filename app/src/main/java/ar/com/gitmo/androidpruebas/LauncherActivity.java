@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import ar.com.gitmo.androidpruebas.storage.AppSettings;
+
 public class LauncherActivity extends AppCompatActivity {
 
     // Duración en Milisegundos de la pantalla inicial

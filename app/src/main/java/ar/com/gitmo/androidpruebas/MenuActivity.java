@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import ar.com.gitmo.androidpruebas.adapters.CustomMenuGrid;
+
 public class MenuActivity extends AppCompatActivity {
 
     GridView grid;

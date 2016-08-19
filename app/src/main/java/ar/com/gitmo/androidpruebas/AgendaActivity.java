@@ -10,6 +10,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import ar.com.gitmo.androidpruebas.adapters.MyAdapter;
+import ar.com.gitmo.androidpruebas.modelos.Actividad;
+import ar.com.gitmo.androidpruebas.modelos.Semana;
+
 public class AgendaActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;

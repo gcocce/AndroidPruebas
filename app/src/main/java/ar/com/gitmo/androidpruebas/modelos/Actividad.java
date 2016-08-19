@@ -1,4 +1,4 @@
-package ar.com.gitmo.androidpruebas;
+package ar.com.gitmo.androidpruebas.modelos;
 
 import java.util.Date;
 

@@ -1,8 +1,4 @@
-package ar.com.gitmo.androidpruebas;
-
-/**
- * Created by gaston.cocce on 16/08/2016.
- */
+package ar.com.gitmo.androidpruebas.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,9 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import ar.com.gitmo.androidpruebas.R;
+import ar.com.gitmo.androidpruebas.modelos.Actividad;
+import ar.com.gitmo.androidpruebas.modelos.Semana;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList<Semana> mDataset;

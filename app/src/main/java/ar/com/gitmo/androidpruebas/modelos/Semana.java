@@ -1,4 +1,4 @@
-package ar.com.gitmo.androidpruebas;
+package ar.com.gitmo.androidpruebas.modelos;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,11 +30,11 @@ public class Semana {
         return fechaHasta;
     }
 
-    void addActividad(Actividad act){
+    public void addActividad(Actividad act){
         actividades.add(act);
     }
 
-    Iterator<Actividad> getIterator(){
+    public Iterator<Actividad> getIterator(){
         return actividades.iterator();
     }
 

@@ -1,4 +1,4 @@
-package ar.com.gitmo.androidpruebas;
+package ar.com.gitmo.androidpruebas.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import ar.com.gitmo.androidpruebas.R;
 
 public class CustomMenuGrid extends BaseAdapter {
     private Context mContext;

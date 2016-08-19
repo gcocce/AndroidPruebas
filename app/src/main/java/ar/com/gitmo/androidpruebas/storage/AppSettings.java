@@ -1,4 +1,4 @@
-package ar.com.gitmo.androidpruebas;
+package ar.com.gitmo.androidpruebas.storage;
 
 import android.content.SharedPreferences;
 import android.util.Log;
