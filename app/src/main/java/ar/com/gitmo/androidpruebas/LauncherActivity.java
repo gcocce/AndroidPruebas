@@ -13,7 +13,7 @@ import ar.com.gitmo.androidpruebas.storage.AppSettings;
 public class LauncherActivity extends AppCompatActivity {
 
     // Duración en Milisegundos de la pantalla inicial
-    private final static int INTRO_TIME=500;
+    private final static int INTRO_TIME=1000;
 
     // Preferencias de la aplicación
     public static AppSettings appSettings;

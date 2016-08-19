@@ -89,7 +89,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         while(iterator.hasNext()){
             Actividad actividad = iterator.next();
 
-            View child = li.inflate(R.layout.calendar_activity, null);
+            View child = li.inflate(R.layout.calendar_activity, holder.calendarItems, false);
             TextView textView = (TextView)child.findViewById(R.id.activity_item);
             textView.setText(actividad.getNombre());
             holder.calendarItems.addView(child);

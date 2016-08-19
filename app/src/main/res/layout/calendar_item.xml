@@ -26,8 +26,7 @@
         android:layout_height="wrap_content"
         android:padding="2dp"
         android:layout_weight="0.8"
-        android:background="@color/colorActivities"
-        android:layout_toRightOf="@id/week">
+        android:background="@color/colorActivities">
 
     </LinearLayout>
 </LinearLayout>
