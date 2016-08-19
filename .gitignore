@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-*.iml
 .gradle
 /local.properties
 /.idea/workspace.xml
@@ -48,4 +46,4 @@ captures/
 
 # Keystore files
 *.jks
->>>>>>> 6f2d50d1ba5a327e0ad8beee98ac585b3e550c25
+
