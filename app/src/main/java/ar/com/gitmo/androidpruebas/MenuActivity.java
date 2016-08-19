@@ -42,7 +42,7 @@ public class MenuActivity extends AppCompatActivity {
 
                 switch (position){
                     case 0: // Calendario
-                        //startActivity(new Intent("ar.uba.fi.fiubapp.AgendaActivity"));
+                        startActivity(new Intent("ar.com.gitmo.androidpruebas.AgendaActivity"));
                         break;
                     default:
                         Toast.makeText(MenuActivity.this, getResources().getString(R.string.menu_proximamente),

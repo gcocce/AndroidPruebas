@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Fiubapp</string>
+    <string name="app_name">PruebApp</string>
 
     <!--Launcher (Pantalla Inicial)-->
-    <string name="launcher_title">Fiubapp</string>
+    <string name="launcher_title">PruebApp</string>
     <string name="beta_subtitle">beta</string>
-    <string name="logo_fiuba">logo fiuba</string>
+    <string name="logo">logo</string>
 
     <!--Menu Principal-->
     <string name="menu_proximamente">Proximamente estará disponible!</string>

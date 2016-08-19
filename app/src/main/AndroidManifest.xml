@@ -19,6 +19,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".BienvenidoActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="ar.com.gitmo.androidpruebas.BienvenidoActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MenuActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
@@ -27,13 +36,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".BienvenidoActivity"
+            android:name=".AgendaActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="ar.com.gitmo.androidpruebas.BienvenidoActivity" />
+                <action android:name="ar.com.gitmo.androidpruebas.AgendaActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

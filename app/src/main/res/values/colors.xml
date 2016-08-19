@@ -18,6 +18,11 @@
     <color name="weekBackground">#d1af50</color>
     <color name="activityBackground">#5870ae</color>
 
+    <!--Calendar Colors-->
+    <color name="colorActivities">#40ffec</color>
+    <color name="colorCalendarRow">#90ff40</color>
+    <color name="colorCalendarWeek">#b3c6a5</color>
+
     <!--Material Colors-->
     <color name="red_50">#ffebee</color>
     <color name="red_100">#ffcdd2</color>

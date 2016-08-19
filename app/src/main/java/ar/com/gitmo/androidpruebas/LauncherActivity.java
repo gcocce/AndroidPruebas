@@ -54,7 +54,7 @@ public class LauncherActivity extends AppCompatActivity {
                     String activity="ar.com.gitmo.androidpruebas.MenuActivity";
 
                     if (appSettings.getRunTimes()==0){
-                        activity="ar.uba.fi.fiubapp.BienvenidoActivity";
+                        activity="ar.com.gitmo.androidpruebas.BienvenidoActivity";
                     }
 
                     // Aumentamos en uno el valor del atributo
