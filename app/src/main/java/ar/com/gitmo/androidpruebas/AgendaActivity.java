@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import ar.com.gitmo.androidpruebas.adapters.MyAdapter;
-import ar.com.gitmo.androidpruebas.modelos.Actividad;
-import ar.com.gitmo.androidpruebas.modelos.Semana;
+import ar.com.gitmo.androidpruebas.models.Actividad;
+import ar.com.gitmo.androidpruebas.models.Semana;
 
 public class AgendaActivity extends AppCompatActivity {
 

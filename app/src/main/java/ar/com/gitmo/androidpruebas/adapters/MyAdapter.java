@@ -7,12 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import ar.com.gitmo.androidpruebas.R;
-import ar.com.gitmo.androidpruebas.modelos.Actividad;
-import ar.com.gitmo.androidpruebas.modelos.Semana;
+import ar.com.gitmo.androidpruebas.models.Actividad;
+import ar.com.gitmo.androidpruebas.models.Semana;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList<Semana> mDataset;
@@ -30,6 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             super(v);
             calendarWeek = (TextView) v.findViewById(R.id.week);
             calendarItems = (LinearLayout) v.findViewById(R.id.items);
+            calendarItems.removeAllViews();
         }
     }
 
@@ -67,7 +70,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final Semana semana = mDataset.get(position);
-        holder.calendarWeek.setText(semana.getFechaDesde().toString() + " " + semana.getFechaHasta().toString());
+        SimpleDateFormat sdf= new SimpleDateFormat("MMM-dd");
+
+        holder.calendarWeek.setText(sdf.format(semana.getFechaDesde()) + " " + sdf.format(semana.getFechaHasta()));
 /*        holder.calendarWeek.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,11 +80,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             }
         });*/
 
+        holder.calendarItems.removeAllViews();
         LayoutInflater li = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         Iterator<Actividad> iterator=semana.getIterator();
         while(iterator.hasNext()){
-            Actividad actividad= iterator.next();
+            Actividad actividad = iterator.next();
 
             View child = li.inflate(R.layout.calendar_activity, null);
             TextView textView = (TextView)child.findViewById(R.id.activity_item);
