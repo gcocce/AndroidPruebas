@@ -7,18 +7,35 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Locale;
 
 import ar.com.gitmo.androidpruebas.R;
 import ar.com.gitmo.androidpruebas.models.Actividad;
 import ar.com.gitmo.androidpruebas.models.Semana;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+
     private ArrayList<Semana> mDataset;
     private Context mContext;
+
+    // Define listener member variable
+    private static OnItemClickListener listener;
+
+    // Define the listener interface
+    public interface OnItemClickListener {
+        void onItemClick(Actividad actividad);
+    }
+
+    // Define the method that allows the parent activity or fragment to define the listener
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        MyAdapter.listener = listener;
+    }
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -70,15 +87,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final Semana semana = mDataset.get(position);
-        SimpleDateFormat sdf= new SimpleDateFormat("MMM-dd");
+        SimpleDateFormat sdf= new SimpleDateFormat("MMM-dd", new Locale("es_ES"));
 
         holder.calendarWeek.setText(sdf.format(semana.getFechaDesde()) + " " + sdf.format(semana.getFechaHasta()));
-/*        holder.calendarWeek.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(name);
-            }
-        });*/
 
         // Para borrar el contenido anterior de la View
         holder.calendarItems.removeAllViews();
@@ -87,11 +98,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         Iterator<Actividad> iterator=semana.getIterator();
         while(iterator.hasNext()){
-            Actividad actividad = iterator.next();
+            final Actividad actividad = iterator.next();
 
             View child = li.inflate(R.layout.calendar_activity, holder.calendarItems, false);
             TextView textView = (TextView)child.findViewById(R.id.activity_item);
             textView.setText(actividad.getNombre());
+
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Toast.makeText(mContext, actividad.getDescripcion(), Toast.LENGTH_SHORT).show();
+
+                    if (listener != null){
+                        listener.onItemClick(actividad);
+                    }
+                }
+            });
+
             holder.calendarItems.addView(child);
         }
 
