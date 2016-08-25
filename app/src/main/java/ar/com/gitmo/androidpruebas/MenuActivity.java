@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import ar.com.gitmo.androidpruebas.adapters.CustomMenuGrid;
+import ar.com.gitmo.androidpruebas.adapters.MenuGridAdapter;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -32,7 +32,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        CustomMenuGrid adapter = new CustomMenuGrid(MenuActivity.this, opciones, imageId);
+        MenuGridAdapter adapter = new MenuGridAdapter(MenuActivity.this, opciones, imageId);
         grid=(GridView)findViewById(R.id.grid);
         grid.setAdapter(adapter);
 

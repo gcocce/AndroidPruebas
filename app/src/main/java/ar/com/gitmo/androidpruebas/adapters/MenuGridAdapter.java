@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 import ar.com.gitmo.androidpruebas.R;
 
-public class CustomMenuGrid extends BaseAdapter {
+public class MenuGridAdapter extends BaseAdapter {
     private Context mContext;
     private final String[] nombres;
     private final int[] Imageid;
 
-    public CustomMenuGrid(Context c, String[] nombres, int[] Imageid ) {
+    public MenuGridAdapter(Context c, String[] nombres, int[] Imageid ) {
         mContext = c;
         this.Imageid = Imageid;
         this.nombres = nombres;
@@ -47,7 +47,7 @@ public class CustomMenuGrid extends BaseAdapter {
         if (convertView == null) {
 
             grid = new View(mContext);
-            grid = inflater.inflate(R.layout.grid_single, null);
+            grid = inflater.inflate(R.layout.menu_grid_single, null);
 
             // Color del item habilitado
             if (position == 0){

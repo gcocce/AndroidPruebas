@@ -1,10 +1,8 @@
 package ar.com.gitmo.androidpruebas;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +17,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import ar.com.gitmo.androidpruebas.adapters.MyAdapter;
+import ar.com.gitmo.androidpruebas.adapters.AgendaAdapter;
 import ar.com.gitmo.androidpruebas.models.Actividad;
 import ar.com.gitmo.androidpruebas.models.Semana;
 
@@ -27,7 +25,8 @@ public class AgendaActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     //private RecyclerView.Adapter mAdapter;
-    private MyAdapter mAdapter;
+
+    private AgendaAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     ArrayList<Semana> myDataset;
@@ -50,9 +49,9 @@ public class AgendaActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(myDataset, this);
+        mAdapter = new AgendaAdapter(myDataset, this);
 
-        mAdapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new AgendaAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Actividad actividad) {
                 //Toast.makeText(AgendaActivity.this, actividad.getNombre() + " was clicked " + actividad.getDescripcion(), Toast.LENGTH_SHORT).show();
