@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import ar.com.gitmo.androidpruebas.adapters.AgendaAdapter;
 import ar.com.gitmo.androidpruebas.adapters.TestListAdapter;
+import ar.com.gitmo.androidpruebas.decorations.TestListDivider;
 import ar.com.gitmo.androidpruebas.models.Semana;
 import ar.com.gitmo.androidpruebas.models.Test;
 
@@ -22,6 +23,7 @@ public class TestListActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private TestListAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private static final int VERTICAL_ITEM_SPACE = 48;
 
     ArrayList<Test> myDataset;
 
@@ -37,18 +39,15 @@ public class TestListActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // Add ItemDecoration
+        // mUiRecyclerView.addItemDecoration(new VerticalSpaceItemDecoration(VERTICAL_ITEM_SPACE));
+        // mUiRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity()));
+        mRecyclerView.addItemDecoration(
+                new TestListDivider(this, R.drawable.test_list_divider));
+
         mAdapter = new TestListAdapter(getDataSet());
         mRecyclerView.setAdapter(mAdapter);
-
-//        RecyclerView.ItemDecoration itemDecoration =
-//                new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
-//        mRecyclerView.addItemDecoration(itemDecoration);
-
-        // Code to Add an item with default animation
-        //((MyRecyclerViewAdapter) mAdapter).addItem(obj, index);
-
-        // Code to remove an item with default animation
-        //((MyRecyclerViewAdapter) mAdapter).deleteItem(index);
     }
 
     @Override

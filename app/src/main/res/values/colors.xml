@@ -13,6 +13,7 @@
     <color name="testItemRowBackground">@color/blue_grey_600</color>
     <color name="testItemNameBG">@color/orange_300</color>
     <color name="testItemDescBG">@color/grey_500</color>
+    <color name="testItemDivider">@color/grey_800</color>
 
 
     <!--Menu Colors-->
