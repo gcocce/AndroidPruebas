@@ -104,7 +104,7 @@ public class AgendaActivity extends AppCompatActivity {
         final Calendar calendar = Calendar.getInstance();
 
         int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
-        semanaActual=dayOfYear / 7;
+        semanaActual = (int)Math.ceil((double) dayOfYear/7);
 
         int dias;
         if (gc.isLeapYear(2016)){
