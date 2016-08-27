@@ -27,7 +27,7 @@ public class AgendaActivity extends AppCompatActivity {
     //private RecyclerView.Adapter mAdapter;
 
     private AgendaAdapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private LinearLayoutManager mLayoutManager;
 
     ArrayList<Semana> myDataset;
     int semanaActual=0;
@@ -90,7 +90,8 @@ public class AgendaActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mLayoutManager.scrollToPosition(semanaActual);
+                //mLayoutManager.scrollToPosition(semanaActual);
+                mLayoutManager.scrollToPositionWithOffset(semanaActual, 0);
             }
         });
     }

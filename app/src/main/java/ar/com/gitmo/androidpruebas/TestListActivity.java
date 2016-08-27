@@ -19,10 +19,9 @@ import ar.com.gitmo.androidpruebas.models.Test;
 public class TestListActivity extends AppCompatActivity {
 
     private static String LOG_TAG = "RecyclerViewActivity";
-
     private RecyclerView mRecyclerView;
     private TestListAdapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private LinearLayoutManager mLayoutManager;
     private static final int VERTICAL_ITEM_SPACE = 48;
 
     ArrayList<Test> myDataset;
@@ -38,6 +37,7 @@ public class TestListActivity extends AppCompatActivity {
 
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
+
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // Add ItemDecoration
