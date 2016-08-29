@@ -117,7 +117,7 @@ public class TestListActivity extends AppCompatActivity {
         myDataset.add(test);
         test = new Test("Bienvenido", "PageViewer con Fragmentos", "ar.com.gitmo.androidpruebas.BienvenidoActivity");
         myDataset.add(test);
-        test = new Test("NotDefined", "", "");
+        test = new Test("SimpleProvider", "Ejemplo de Content Provider con SQLite", "ar.com.gitmo.androidpruebas.SimpleContentProvider");
         myDataset.add(test);
 
         for (int x=0; x < 20; x++){
