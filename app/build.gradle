@@ -16,7 +16,42 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
+    }
+}
+
+assembleRelease.doLast {
+    print "**********************DOLAST***************************\n"
+
+    copy {
+        from('../') {
+            include 'app-release.apk'
+        }
+        into '../build/'
+
+        //include('DevUpload.xml')
+
+        rename ('app-release.apk', 'pruebas-release-version '+android.defaultConfig.versionName +'-' + android.defaultConfig.versionCode +'.apk')
+    }
+
+    copy {
+        from('../') {
+            include 'app-release.apk'
+        }
+        into '../build/'
+
+    }
+
+}
+
+task doSomethingWhenBuild << {
+    print "**********************DoWhenpackageRelease*********************\n"
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name.contains('packageRelease')) {
+        task.dependsOn doSomethingWhenBuild
     }
 }
 
