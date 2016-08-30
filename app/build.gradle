@@ -9,7 +9,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "0.0.1 beta"
+        versionName "0.0.1beta"
     }
 
     buildTypes {
@@ -22,7 +22,7 @@ android {
 }
 
 assembleRelease.doLast {
-    print "**********************DOLAST***************************\n"
+    print "**********************DoAfterAssembleRelease***************************\n"
 
     copy {
         from('../') {
@@ -30,9 +30,7 @@ assembleRelease.doLast {
         }
         into '../build/'
 
-        //include('DevUpload.xml')
-
-        rename ('app-release.apk', 'pruebas-release-version '+android.defaultConfig.versionName +'-' + android.defaultConfig.versionCode +'.apk')
+        rename ('app-release.apk', 'pruebas-release-v'+android.defaultConfig.versionName +'-vc' + android.defaultConfig.versionCode +'.apk')
     }
 
     copy {
@@ -40,18 +38,51 @@ assembleRelease.doLast {
             include 'app-release.apk'
         }
         into '../build/'
-
     }
 
+    ant.mail ([
+            mailhost: "smtp.gmail.com",
+            mailport:"465",
+            subject: "Email Recieved",
+            messagemimetype: "text/plain",
+            user: "gcocce@gmail.com",
+            password:"",
+            enableStartTLS:"true",
+            ssl:"true"]) {
+        from (address:'gcocce@gmail.com')
+        to (address:'gcocce@gmail.com')
+        message('el mensaje es este')
+    }
 }
 
 task doSomethingWhenBuild << {
-    print "**********************DoWhenpackageRelease*********************\n"
+    print "**********************DoWhenPackageRelease*********************\n"
 }
 
 tasks.whenTaskAdded { task ->
     if (task.name.contains('packageRelease')) {
         task.dependsOn doSomethingWhenBuild
+    }
+}
+
+class MailSender extends DefaultTask {
+
+    @TaskAction
+    def sendMail(){
+        def mailParams = [
+                mailhost: "smtp.gmail.com",
+                mailport:"465",
+                subject: "Email Recieved",
+                messagemimetype: "text/plain",
+                user: "mallaudinqazi@gmail.com",
+                password:"",
+                enableStartTLS:"true",
+                ssl:"true"]
+        ant.mail (mailParams) {
+            from (address:'gcocce@gmail.com')
+            to (address:'gcocce@gmail.com')
+            message('el mensaje es este')
+        }
     }
 }
 
