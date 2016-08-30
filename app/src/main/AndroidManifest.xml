@@ -48,8 +48,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TestListActivity"
+        <activity android:name=".TestListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -62,6 +61,22 @@
             android:name=".DBTestActivity"
             android:label="@string/title_activity_dbtest"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SimpleContentProvider"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="ar.com.gitmo.androidpruebas.SimpleContentProvider" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <provider
+            android:name=".providers.StudentsProvider"
+            android:authorities="ar.com.gitmo.androidpruebas.provider.College">
+        </provider>
+
     </application>
 
 </manifest>
