@@ -15,7 +15,7 @@ public class MenuActivity extends AppCompatActivity {
     GridView grid;
     String[] opciones = {
             "Calendario",
-            "Institucional",
+            "TestDrawer",
             "Teléfonos",
             "Sedes"
     } ;
@@ -45,6 +45,9 @@ public class MenuActivity extends AppCompatActivity {
                 switch (position){
                     case 0: // Calendario
                         startActivity(new Intent("ar.com.gitmo.androidpruebas.AgendaActivity"));
+                        break;
+                    case 1:
+                        startActivity(new Intent("ar.com.gitmo.androidpruebas.TestDrawerActivity"));
                         break;
                     default:
                         Toast.makeText(MenuActivity.this, getResources().getString(R.string.menu_proximamente),
