@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ import ar.com.gitmo.androidpruebas.R;
 import ar.com.gitmo.androidpruebas.models.Actividad;
 import ar.com.gitmo.androidpruebas.models.Semana;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class AgendaAdapter extends RecyclerView.Adapter<AgendaAdapter.ViewHolder> {
 
     private ArrayList<Semana> mDataset;
     private Context mContext;
@@ -33,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     // Define the method that allows the parent activity or fragment to define the listener
     public void setOnItemClickListener(OnItemClickListener listener) {
-        MyAdapter.listener = listener;
+        AgendaAdapter.listener = listener;
     }
 
 
@@ -65,15 +64,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(ArrayList<Semana> myDataset, Context context) {
+    public AgendaAdapter(ArrayList<Semana> myDataset, Context context) {
         mDataset = myDataset;
         mContext = context;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+    public AgendaAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                       int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.calendar_item, parent, false);
         // set the view's size, margins, paddings and layout parameters

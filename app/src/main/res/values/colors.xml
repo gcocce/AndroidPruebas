@@ -8,6 +8,13 @@
     <color name="colorPrimaryTextDark">@android:color/primary_text_dark</color>
     <color name="colorSecondaryTextDark">@android:color/secondary_text_dark</color>
 
+    <!--Test List Colors-->
+    <color name="testItemBackground">@color/blue_grey_300</color>
+    <color name="testItemRowBackground">@color/blue_grey_600</color>
+    <color name="testItemNameBG">@color/orange_300</color>
+    <color name="testItemDescBG">@color/grey_500</color>
+    <color name="testItemDivider">@color/grey_800</color>
+
 
     <!--Menu Colors-->
     <color name="itemBackgroundEnabled">@color/yellow_500</color>

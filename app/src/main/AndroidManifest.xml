@@ -8,13 +8,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".LauncherActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.LauncherScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,7 +24,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="ar.com.gitmo.androidpruebas.BienvenidoActivity" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -34,7 +33,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="ar.com.gitmo.androidpruebas.MenuActivity" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -44,10 +42,37 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="ar.com.gitmo.androidpruebas.AgendaActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TestListActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="ar.com.gitmo.androidpruebas.TestListActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DBTestActivity"
+            android:label="@string/title_activity_dbtest"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SimpleContentProvider"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="ar.com.gitmo.androidpruebas.SimpleContentProvider" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <provider
+            android:name=".providers.StudentsProvider"
+            android:authorities="ar.com.gitmo.androidpruebas.provider.College">
+        </provider>
 
         <activity
             android:name=".TestDrawerActivity"
