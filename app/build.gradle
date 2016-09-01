@@ -57,6 +57,13 @@ assembleRelease.doLast {
 
 task doSomethingWhenBuild << {
     print "**********************DoWhenPackageRelease*********************\n"
+
+}
+
+task doSomeLastThing << {
+    print "**********************doSomeLastThing*********************\n"
+
+    task.dependsOn assembleRelease
 }
 
 tasks.whenTaskAdded { task ->
