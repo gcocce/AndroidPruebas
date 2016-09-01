@@ -9,5 +9,6 @@
 
     <!--Menu Principal-->
     <string name="menu_proximamente">Proximamente estará disponible!</string>
+    <string name="title_activity_dbtest">DBTestActivity</string>
 
 </resources>
