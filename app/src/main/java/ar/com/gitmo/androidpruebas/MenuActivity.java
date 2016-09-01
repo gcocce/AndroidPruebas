@@ -14,14 +14,16 @@ public class MenuActivity extends AppCompatActivity {
 
     GridView grid;
     String[] opciones = {
-            "Calendario",
+            "Agenda",
+            "Calendar",
             "Institucional",
             "Teléfonos",
             "Sedes"
     } ;
 
     int[] imageId = {
-            R.drawable.icono_calendario,
+            R.drawable.icono_agenda,
+            R.drawable.icono_calendar,
             R.drawable.icono_insitucional,
             R.drawable.icono_guiatelefonica,
             R.drawable.icono_sedes
