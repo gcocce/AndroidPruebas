@@ -1,7 +1,9 @@
 package ar.com.gitmo.androidpruebas;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -48,12 +50,12 @@ public class AgendaActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // specify an adapter (see also next example)
+        // Specify an adapter (see also next example)
         mAdapter = new AgendaAdapter(myDataset, this);
 
         mAdapter.setOnItemClickListener(new AgendaAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(Actividad actividad) {
+            public void onItemClick(final Actividad actividad) {
                 //Toast.makeText(AgendaActivity.this, actividad.getNombre() + " was clicked " + actividad.getDescripcion(), Toast.LENGTH_SHORT).show();
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AgendaActivity.this);
@@ -62,23 +64,35 @@ public class AgendaActivity extends AppCompatActivity {
 
                 alertDialogBuilder.setMessage( sdf.format(actividad.getFechaDesde()) + " " + sdf.format(actividad.getFechaHasta())+ "\n" +actividad.getNombre() + ": " + actividad.getDescripcion());
 
-                alertDialogBuilder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
-                        Toast.makeText(AgendaActivity.this,"You clicked yes button",Toast.LENGTH_LONG).show();
+                        Toast.makeText(AgendaActivity.this,"You clicked Ok button",Toast.LENGTH_LONG).show();
                     }
                 });
 
-                alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setNegativeButton("Add to MyCalendar",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(AgendaActivity.this,"You clicked no button",Toast.LENGTH_LONG).show();
+                        Toast.makeText(AgendaActivity.this,"Adding event.",Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(Intent.ACTION_INSERT_OR_EDIT);
+                        intent.setType("vnd.android.cursor.item/event");
+                        startActivity(intent);
+
+                        intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, actividad.getFechaDesde().toString());
+                        intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,actividad.getFechaHasta().toString());
+                        intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
+                        intent.putExtra(CalendarContract.Events.TITLE, actividad.getNombre());
+                        intent.putExtra(CalendarContract.Events.DESCRIPTION, actividad.getDescripcion());
+                        intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Fiuba");
+                        intent.putExtra(CalendarContract.Events.RRULE, "FREQ=YEARLY");
                     }
                 });
+
 
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
-
             }
         });
 
