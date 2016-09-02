@@ -71,25 +71,23 @@ public class AgendaActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialogBuilder.setNegativeButton("Add to MyCalendar",new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setNegativeButton("Agendar",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(AgendaActivity.this,"Adding event.",Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(Intent.ACTION_INSERT_OR_EDIT);
-                        intent.setType("vnd.android.cursor.item/event");
+                        Intent intent = new Intent(Intent.ACTION_INSERT)
+                                .setData(CalendarContract.Events.CONTENT_URI)
+                                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, actividad.getFechaDesde().getTime())
+                                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, actividad.getFechaHasta().getTime())
+                                .putExtra(CalendarContract.Events.TITLE, actividad.getNombre())
+                                .putExtra(CalendarContract.Events.DESCRIPTION, actividad.getDescripcion())
+                                .putExtra(CalendarContract.Events.EVENT_LOCATION, "Fiuba")
+                                .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true)
+                                .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
                         startActivity(intent);
-
-                        intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, actividad.getFechaDesde().toString());
-                        intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,actividad.getFechaHasta().toString());
-                        intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);
-                        intent.putExtra(CalendarContract.Events.TITLE, actividad.getNombre());
-                        intent.putExtra(CalendarContract.Events.DESCRIPTION, actividad.getDescripcion());
-                        intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Fiuba");
-                        intent.putExtra(CalendarContract.Events.RRULE, "FREQ=YEARLY");
                     }
                 });
-
 
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
