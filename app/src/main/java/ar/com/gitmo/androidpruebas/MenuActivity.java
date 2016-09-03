@@ -15,6 +15,7 @@ public class MenuActivity extends AppCompatActivity {
     GridView grid;
     String[] opciones = {
             "Agenda",
+            "TestDrawer",
             "Calendar",
             "Institucional",
             "Teléfonos",

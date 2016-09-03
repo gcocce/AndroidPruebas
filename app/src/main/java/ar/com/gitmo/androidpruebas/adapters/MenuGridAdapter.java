@@ -50,7 +50,7 @@ public class MenuGridAdapter extends BaseAdapter {
             grid = inflater.inflate(R.layout.menu_grid_single, null);
 
             // Color del item habilitado
-            if (position == 0){
+            if (position == 0 || position==1){
                 grid.setBackgroundColor(mContext.getResources().getColor(R.color.itemBackgroundEnabled));
             }else{
                 grid.setBackgroundColor(mContext.getResources().getColor(R.color.itemBackgroundDisabled));
