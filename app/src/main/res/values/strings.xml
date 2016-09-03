@@ -11,4 +11,7 @@
     <string name="menu_proximamente">Proximamente estará disponible!</string>
     <string name="title_activity_dbtest">DBTestActivity</string>
 
+    <string name="test_drawer_open">Open</string>
+    <string name="test_drawer_close">Close</string>
+
 </resources>

@@ -17,6 +17,5 @@ tools:context="ar.com.gitmo.androidpruebas.MenuActivity" >
         android:padding="10dp"
         android:paddingTop="20dp"
         android:verticalSpacing="5dp"
-        android:horizontalSpacing="5dp"
-        />
+        android:horizontalSpacing="5dp"/>
 </LinearLayout>

@@ -24,6 +24,7 @@ public class MenuActivity extends AppCompatActivity {
 
     int[] imageId = {
             R.drawable.icono_agenda,
+            R.drawable.icono_test_drawer,
             R.drawable.icono_calendar,
             R.drawable.icono_insitucional,
             R.drawable.icono_guiatelefonica,
@@ -48,6 +49,9 @@ public class MenuActivity extends AppCompatActivity {
                 switch (position){
                     case 0: // Calendario
                         startActivity(new Intent("ar.com.gitmo.androidpruebas.AgendaActivity"));
+                        break;
+                    case 1: // Calendario
+                        startActivity(new Intent("ar.com.gitmo.androidpruebas.TestDrawerActivity"));
                         break;
                     default:
                         Toast.makeText(MenuActivity.this, getResources().getString(R.string.menu_proximamente),

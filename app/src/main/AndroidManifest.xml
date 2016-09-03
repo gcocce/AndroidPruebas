@@ -76,7 +76,7 @@
 
         <activity
             android:name=".TestDrawerActivity"
-            android:label="@string/title_activity_test_drawer"
+            android:label="TestDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="ar.com.gitmo.androidpruebas.TestDrawerActivity" />
