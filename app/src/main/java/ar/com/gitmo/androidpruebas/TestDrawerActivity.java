@@ -54,6 +54,8 @@ public class TestDrawerActivity extends AppCompatActivity
     ArrayList<Semana> myDataset;
     int semanaActual=0;
 
+    boolean filtro=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,7 +139,11 @@ public class TestDrawerActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 //mLayoutManager.scrollToPosition(semanaActual);
-                mLayoutManager.scrollToPositionWithOffset(semanaActual, 0);
+
+                if(!filtro){
+                    Log.i(TAG, TAG_ACTIVITY_NAME + " ITEMS: "+ mAdapter.getItemCount());
+                    mLayoutManager.scrollToPositionWithOffset(semanaActual, 0);
+                }
             }
         });
     }
@@ -170,35 +176,44 @@ public class TestDrawerActivity extends AppCompatActivity
 
         Log.i(TAG, TAG_ACTIVITY_NAME + " QUERY: " + query);
 
-        ArrayList<Semana> myNewDataset=new ArrayList<Semana>();
+        if (query.length()==0){
+            filtro=false;
 
-        Iterator<Semana> itSemanas=myDataset.iterator();
-        while(itSemanas.hasNext()){
-            final Semana semana = itSemanas.next();
+            mAdapter.setFilter(myDataset);
+        }else{
+            filtro=true;
 
-            boolean tieneActividad=false;
+            ArrayList<Semana> myNewDataset=new ArrayList<Semana>();
 
-            Semana nSemana = new Semana();
-            nSemana.setFechaDesde(semana.getFechaDesde());
-            nSemana.setFechaHasta(semana.getFechaHasta());
+            Iterator<Semana> itSemanas=myDataset.iterator();
+            while(itSemanas.hasNext()){
+                final Semana semana = itSemanas.next();
 
-            Iterator<Actividad> itActividades=semana.getIterator();
-            while(itActividades.hasNext()) {
-                final Actividad actividad = itActividades.next();
+                boolean tieneActividad=false;
 
-                if (actividad.getNombre().toLowerCase().contains(query.toLowerCase())){
-                    tieneActividad=true;
+                Semana nSemana = new Semana();
+                nSemana.setFechaDesde(semana.getFechaDesde());
+                nSemana.setFechaHasta(semana.getFechaHasta());
 
-                    nSemana.addActividad(actividad);
+                Iterator<Actividad> itActividades=semana.getIterator();
+                while(itActividades.hasNext()) {
+                    final Actividad actividad = itActividades.next();
+
+                    if (actividad.getNombre().toLowerCase().contains(query.toLowerCase())){
+                        tieneActividad=true;
+
+                        nSemana.addActividad(actividad);
+                    }
+                }
+
+                if (tieneActividad){
+                    myNewDataset.add(nSemana);
                 }
             }
 
-            if (tieneActividad){
-                myNewDataset.add(nSemana);
-            }
-        }
+            mAdapter.setFilter(myNewDataset);
 
-        mAdapter.setFilter(myNewDataset);
+        }
 
         mAdapter.notifyDataSetChanged();
 
