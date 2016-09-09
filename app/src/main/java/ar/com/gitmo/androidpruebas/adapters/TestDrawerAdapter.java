@@ -126,4 +126,10 @@ public class TestDrawerAdapter extends RecyclerView.Adapter<TestDrawerAdapter.Vi
         return mDataset.size();
     }
 
+    public void setFilter(ArrayList<Semana> list) {
+        mDataset = new ArrayList<>();
+        mDataset.addAll(list);
+        notifyDataSetChanged();
+    }
+
 }
