@@ -23,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -30,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.Locale;
 
 import ar.com.gitmo.androidpruebas.adapters.AgendaAdapter;
@@ -168,9 +170,35 @@ public class TestDrawerActivity extends AppCompatActivity
 
         Log.i(TAG, TAG_ACTIVITY_NAME + " QUERY: " + query);
 
+        ArrayList<Semana> myNewDataset=new ArrayList<Semana>();
 
+        Iterator<Semana> itSemanas=myDataset.iterator();
+        while(itSemanas.hasNext()){
+            final Semana semana = itSemanas.next();
 
+            boolean tieneActividad=false;
 
+            Semana nSemana = new Semana();
+            nSemana.setFechaDesde(semana.getFechaDesde());
+            nSemana.setFechaHasta(semana.getFechaHasta());
+
+            Iterator<Actividad> itActividades=semana.getIterator();
+            while(itActividades.hasNext()) {
+                final Actividad actividad = itActividades.next();
+
+                if (actividad.getNombre().toLowerCase().contains(query.toLowerCase())){
+                    tieneActividad=true;
+
+                    nSemana.addActividad(actividad);
+                }
+            }
+
+            if (tieneActividad){
+                myNewDataset.add(nSemana);
+            }
+        }
+
+        mAdapter.setFilter(myNewDataset);
 
         mAdapter.notifyDataSetChanged();
 
@@ -179,6 +207,8 @@ public class TestDrawerActivity extends AppCompatActivity
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+
+
         return false;
     }
 

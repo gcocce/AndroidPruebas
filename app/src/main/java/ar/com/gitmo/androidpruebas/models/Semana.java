@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
-/**
- * Created by gaston.cocce on 18/08/2016.
- */
+
 public class Semana {
 
     ArrayList<Actividad> actividades=new ArrayList<>();
