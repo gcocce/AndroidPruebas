@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="ar.com.gitmo.androidpruebas.DBTestActivity"
+    tools:context=".PruebaDBActivity"
     tools:showIn="@layout/activity_dbtest">
 
 </RelativeLayout>

@@ -20,7 +20,7 @@ public class BienvenidoActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent("ar.com.gitmo.androidpruebas.TestListActivity"));
+                startActivity(new Intent("ar.com.gitmo.androidpruebas.PruebaListActivity"));
             }
         });
     }

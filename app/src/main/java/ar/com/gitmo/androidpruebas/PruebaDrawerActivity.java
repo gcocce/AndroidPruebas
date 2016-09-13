@@ -1,13 +1,10 @@
 package ar.com.gitmo.androidpruebas;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,7 +20,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -34,16 +30,15 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Locale;
 
-import ar.com.gitmo.androidpruebas.adapters.AgendaAdapter;
 import ar.com.gitmo.androidpruebas.adapters.TestDrawerAdapter;
 import ar.com.gitmo.androidpruebas.models.Actividad;
 import ar.com.gitmo.androidpruebas.models.Semana;
 
-public class TestDrawerActivity extends AppCompatActivity
+public class PruebaDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , SearchView.OnQueryTextListener {
 
     private final String TAG="AndroidPruebas";
-    private final String TAG_ACTIVITY_NAME="TestDrawerActivity";
+    private final String TAG_ACTIVITY_NAME="PruebaDrawerActivity";
 
     private RecyclerView mRecyclerView;
     //private RecyclerView.Adapter mAdapter;
@@ -94,7 +89,7 @@ public class TestDrawerActivity extends AppCompatActivity
             public void onItemClick(final Actividad actividad) {
                 //Toast.makeText(AgendaActivity.this, actividad.getNombre() + " was clicked " + actividad.getDescripcion(), Toast.LENGTH_SHORT).show();
 
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TestDrawerActivity.this);
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PruebaDrawerActivity.this);
 
                 SimpleDateFormat sdf= new SimpleDateFormat("MMM-dd", new Locale("es_ES"));
 
@@ -103,14 +98,14 @@ public class TestDrawerActivity extends AppCompatActivity
                 alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
-                        Toast.makeText(TestDrawerActivity.this,"You clicked Ok button",Toast.LENGTH_LONG).show();
+                        Toast.makeText(PruebaDrawerActivity.this,"You clicked Ok button",Toast.LENGTH_LONG).show();
                     }
                 });
 
                 alertDialogBuilder.setNegativeButton("Agendar",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(TestDrawerActivity.this,"Adding event.",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PruebaDrawerActivity.this,"Adding event.",Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(Intent.ACTION_INSERT)
                                 .setData(CalendarContract.Events.CONTENT_URI)

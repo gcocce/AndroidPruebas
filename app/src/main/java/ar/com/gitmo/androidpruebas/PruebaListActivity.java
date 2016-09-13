@@ -15,13 +15,12 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import ar.com.gitmo.androidpruebas.adapters.AgendaAdapter;
 import ar.com.gitmo.androidpruebas.adapters.TestListAdapter;
 import ar.com.gitmo.androidpruebas.decorations.TestListDivider;
-import ar.com.gitmo.androidpruebas.models.Semana;
-import ar.com.gitmo.androidpruebas.models.Test;
+import ar.com.gitmo.androidpruebas.models.Prueba;
 
-public class TestListActivity extends AppCompatActivity {
+
+public class PruebaListActivity extends AppCompatActivity {
 
     private static String LOG_TAG = "RecyclerViewActivity";
     private RecyclerView mRecyclerView;
@@ -29,14 +28,14 @@ public class TestListActivity extends AppCompatActivity {
     private LinearLayoutManager mLayoutManager;
     private static final int VERTICAL_ITEM_SPACE = 48;
 
-    ArrayList<Test> myDataset;
+    ArrayList<Prueba> myDataset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_list);
 
-        Log.i(LOG_TAG, "TestListActivity started");
+        Log.i(LOG_TAG, "PruebaListActivity started");
 
         AppBarLayout app_bar_layout=(AppBarLayout)findViewById(R.id.app_bar);
         app_bar_layout.setExpanded(false);
@@ -108,20 +107,20 @@ public class TestListActivity extends AppCompatActivity {
               });
     }
 
-    private ArrayList<Test> getDataSet() {
-        myDataset = new ArrayList<Test>();
+    private ArrayList<Prueba> getDataSet() {
+        myDataset = new ArrayList<Prueba>();
 
-        Test test = new Test("Agenda", "RecyclerView con items que continenen lista de items", "ar.com.gitmo.androidpruebas.AgendaActivity");
+        Prueba test = new Prueba("Agenda", "RecyclerView con items que continenen lista de items", "ar.com.gitmo.androidpruebas.AgendaActivity");
         myDataset.add(test);
-        test = new Test("MenuGrid", "Menu de Imagenes con Textos", "ar.com.gitmo.androidpruebas.MenuActivity");
+        test = new Prueba("MenuGrid", "Menu de Imagenes con Textos", "ar.com.gitmo.androidpruebas.MenuActivity");
         myDataset.add(test);
-        test = new Test("Bienvenido", "PageViewer con Fragmentos", "ar.com.gitmo.androidpruebas.BienvenidoActivity");
+        test = new Prueba("Bienvenido", "PageViewer con Fragmentos", "ar.com.gitmo.androidpruebas.BienvenidoActivity");
         myDataset.add(test);
-        test = new Test("SimpleProvider", "Ejemplo de Content Provider con SQLite", "ar.com.gitmo.androidpruebas.SimpleContentProvider");
+        test = new Prueba("SimpleProvider", "Ejemplo de Content Provider con SQLite", "ar.com.gitmo.androidpruebas.PruebaContentProvider");
         myDataset.add(test);
 
         for (int x=0; x < 20; x++){
-            test = new Test("MenuGrid", "Menú de Imágenes con Textos", "ar.com.gitmo.androidpruebas.MenuActivity");
+            test = new Prueba("MenuGrid", "Menú de Imágenes con Textos", "ar.com.gitmo.androidpruebas.MenuActivity");
             myDataset.add(test);
         }
 

@@ -1,6 +1,6 @@
 package ar.com.gitmo.androidpruebas.models;
 
-public class Test {
+public class Prueba {
 
     private String name;
     private String description;
@@ -8,7 +8,7 @@ public class Test {
 
     private String activity;
 
-    public Test(String n, String d,String a){
+    public Prueba(String n, String d,String a){
         name=n;
         description=d;
         activity=a;

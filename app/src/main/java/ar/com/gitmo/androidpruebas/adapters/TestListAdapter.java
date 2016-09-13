@@ -15,15 +15,15 @@ import java.util.Locale;
 
 import ar.com.gitmo.androidpruebas.R;
 import ar.com.gitmo.androidpruebas.models.Actividad;
+import ar.com.gitmo.androidpruebas.models.Prueba;
 import ar.com.gitmo.androidpruebas.models.Semana;
-import ar.com.gitmo.androidpruebas.models.Test;
 
 /**
  * Created by gaston.cocce on 25/08/2016.
  */
 public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.ViewHolder>{
 
-    private ArrayList<Test> mDataset;
+    private ArrayList<Prueba> mDataset;
 
     // Define listener member variable
     private static OnItemClickListener listener;
@@ -58,19 +58,19 @@ public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.ViewHo
         }
     }
 
-    public void add(int position, Test item) {
+    public void add(int position, Prueba item) {
         mDataset.add(position, item);
         notifyItemInserted(position);
     }
 
-    public void remove(Test item) {
+    public void remove(Prueba item) {
         int position = mDataset.indexOf(item);
         mDataset.remove(position);
         notifyItemRemoved(position);
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public TestListAdapter(ArrayList<Test> myDataset) {
+    public TestListAdapter(ArrayList<Prueba> myDataset) {
         mDataset = myDataset;
     }
 
@@ -90,7 +90,7 @@ public class TestListAdapter extends RecyclerView.Adapter<TestListAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        Test test = mDataset.get(position);
+        Prueba test = mDataset.get(position);
 
         holder.testName.setText(test.getName());
         holder.testDesc.setText(test.getDescription());

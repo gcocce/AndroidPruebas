@@ -12,7 +12,7 @@ import android.view.View;
 import ar.com.gitmo.androidpruebas.database.DictionaryModel;
 import ar.com.gitmo.androidpruebas.database.DictionaryOpenHelper;
 
-public class DBTestActivity extends AppCompatActivity {
+public class PruebaDBActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

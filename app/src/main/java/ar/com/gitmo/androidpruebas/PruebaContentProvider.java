@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import ar.com.gitmo.androidpruebas.providers.StudentsProvider;
 
-public class SimpleContentProvider extends AppCompatActivity {
+public class PruebaContentProvider extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

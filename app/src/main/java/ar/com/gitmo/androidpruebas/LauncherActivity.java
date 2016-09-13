@@ -53,7 +53,7 @@ public class LauncherActivity extends AppCompatActivity {
                         logoTimer= logoTimer + 50;
                     }
 
-                    String activity="ar.com.gitmo.androidpruebas.TestListActivity";
+                    String activity="ar.com.gitmo.androidpruebas.PruebaListActivity";
 
                     if (appSettings.getRunTimes()==0){
                         activity="ar.com.gitmo.androidpruebas.BienvenidoActivity";
