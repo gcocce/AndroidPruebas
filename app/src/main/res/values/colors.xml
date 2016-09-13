@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--App Colors-->
+    <!--   your app branding color for the app bar -->
     <color name="colorPrimary">@color/light_blue_500</color>
+    <!--   darker variant for the status bar and contextual app bars -->
     <color name="colorPrimaryDark">@color/light_blue_700</color>
+    <!--   theme UI controls like checkboxes and text fields -->
     <color name="colorAccent">@color/pink_A200</color>
+
 
     <color name="colorPrimaryTextDark">@android:color/primary_text_dark</color>
     <color name="colorSecondaryTextDark">@android:color/secondary_text_dark</color>
