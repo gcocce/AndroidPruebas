@@ -21,7 +21,7 @@ android {
     }
 }
 
-assembleRelease.doLast {
+task doAfterAssembleRelease() << {
     print "**********************DoAfterAssembleRelease***************************\n"
 
     copy {
@@ -39,6 +39,8 @@ assembleRelease.doLast {
         }
         into '../build/'
     }
+
+    dependsOn 'assembleRelease'
 }
 
 task doSomethingWhenBuild << {
