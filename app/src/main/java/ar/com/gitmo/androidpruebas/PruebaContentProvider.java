@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
@@ -41,6 +42,8 @@ public class PruebaContentProvider extends AppCompatActivity {
 
         Toast.makeText(getBaseContext(),
                 uri.toString(), Toast.LENGTH_LONG).show();
+
+        Log.i("PruebaContentProvider",uri.toString());
     }
 
     public void onClickRetrieveStudents(View view) {

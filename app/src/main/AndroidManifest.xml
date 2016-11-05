@@ -49,7 +49,7 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="ar.com.gitmo.androidpruebas.TestListActivity" />
+                <action android:name="ar.com.gitmo.androidpruebas.PruebaListActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -57,13 +57,18 @@
         <activity
             android:name=".PruebaDBActivity"
             android:label="@string/title_activity_dbtest"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="ar.com.gitmo.androidpruebas.PruebaDBActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".PruebaContentProvider"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="ar.com.gitmo.androidpruebas.SimpleContentProvider" />
+                <action android:name="ar.com.gitmo.androidpruebas.PruebaContentProvider" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -76,13 +81,13 @@
 
         <activity
             android:name=".PruebaDrawerActivity"
-            android:label="TestDrawerActivity"
+            android:label="PruebaDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
             <intent-filter>
-                <action android:name="ar.com.gitmo.androidpruebas.TestDrawerActivity" />
+                <action android:name="ar.com.gitmo.androidpruebas.PruebaDrawerActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>

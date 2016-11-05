@@ -118,6 +118,8 @@ public class PruebaListActivity extends AppCompatActivity {
         myDataset.add(test);
         test = new Prueba("SimpleProvider", "Ejemplo de Content Provider con SQLite", "ar.com.gitmo.androidpruebas.PruebaContentProvider");
         myDataset.add(test);
+        test = new Prueba("DBActivity", "Ejemplo de Content Provider con SQLite", "ar.com.gitmo.androidpruebas.PruebaDBActivity");
+        myDataset.add(test);
 
         for (int x=0; x < 20; x++){
             test = new Prueba("MenuGrid", "Menú de Imágenes con Textos", "ar.com.gitmo.androidpruebas.MenuActivity");
